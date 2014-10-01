@@ -15,6 +15,7 @@ Week 2
 ------
 * [Trigonometry & the Unit Circle on the Khan Academy](https://www.khanacademy.org/math/trigonometry)
 * [Maths is Fun Trigonometry](http://www.mathsisfun.com/sine-cosine-tangent.html)
+* [Some trigonometry problems for you to try](Course/Trig Problems.md)
 * [Lots of trigonometry practice problems](http://dtc.pima.edu/~hacker/primers/trigonometry-primer/trigonometry-primer-problem-set.pdf)
 
 Week 1
