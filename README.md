@@ -10,3 +10,14 @@ Resources
 * [The Nature of Code](http://natureofcode.com/)
 * [Games Fleadh](http://www.gamesfleadh.ie/)
 * [The Imagine Cup](https://www.imaginecup.com/)
+
+Week 2
+------
+* [Trigonometry & the Unit Circle on the Khan Academy](https://www.khanacademy.org/math/trigonometry)
+* [Maths is Fun Trigonometry](http://www.mathsisfun.com/sine-cosine-tangent.html)
+* [Lots of trigonometry practice problems](http://dtc.pima.edu/~hacker/primers/trigonometry-primer/trigonometry-primer-problem-set.pdf)
+
+Week 1
+------
+* [Introduction sketch](Processing Examples/Introduction)
+
