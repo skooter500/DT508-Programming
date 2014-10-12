@@ -31,4 +31,5 @@ Week 2
 Week 1
 ------
 * [Introduction sketch](Processing Examples/Introduction)
+* [Data types & operations in Processing sketch](Processing Examples/Data_types)
 
