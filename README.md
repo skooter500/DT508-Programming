@@ -22,7 +22,7 @@ Week 4
 	![Sketch](images/p1.png)
 
 * I will give a prize for the best sketch. Feel free to add your own beautiful crazyness to the sketch
-* Here are some pictures of some geometric shapes you can make in Processing.
+* Here are [some pictures of some geometric shapes](https://plus.google.com/photos/102641008582291248101/albums/6064398604152239873) you can make in Processing: 
 * Please submit your sketches through http://classroom.google.com. Sign in using your DIT student email account and use the code s3n06gw
 
 Week 3
