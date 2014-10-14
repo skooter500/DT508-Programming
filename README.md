@@ -13,6 +13,18 @@ Resources
 * [How to use git](http://git-scm.com/documentation)
 * [A video tutorial on git/github](https://www.youtube.com/watch?v=p_PGUltnB6w)
 
+Week 4
+------
+* [Perspective lines with a while loop sketch](Processing Examples/PerspectiveLinesWIthWhileLoop)
+* [Smiley Face With Wallpaper nested for loops](Processing Examples/SmileyFaceWallpaper)
+* Make this sketch for next week. Use the minimum number of loops and the minimum amount of code:
+
+	![Sketch](images/p1.png)
+
+* I will give a prize for the best sketch. Feel free to add your own beautiful crazyness to the sketch
+* Here are some pictures of some geometric shapes you can make in Processing.
+* Please submit your sketches through http://classroom.google.com. Sign in using your DIT student email account and use the code s3n06gw
+
 Week 3
 ------
 * [Kite trigonometry problem](Processing Examples/KiteTriangleProblem)
