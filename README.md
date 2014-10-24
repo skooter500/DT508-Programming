@@ -13,6 +13,18 @@ Resources
 * [How to use git](http://git-scm.com/documentation)
 * [A video tutorial on git/github](https://www.youtube.com/watch?v=p_PGUltnB6w)
 
+Week 5
+------
+* [Arrays in Processing](https://www.processing.org/reference/Array.html)
+* [Arrays in processing sketch](Processing Examples/Arrays)
+* [Balloon Game](Processing Examples/BalloonGame)
+* Homework - Make a proper game out of the BallonGame sketch
+	*  Add lives - You loose a life when a balloon hits the top of the screen
+	*  Add nice fonts and sounds
+	*  Add a game over screen
+	*  Add some progression, for example the ballons could get faster as the game progresses
+	*  Submit your sketch through Google Classroom
+
 Week 4
 ------
 * [Perspective lines with a while loop sketch](Processing Examples/PerspectiveLinesWIthWhileLoop)
