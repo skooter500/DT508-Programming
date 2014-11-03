@@ -94,13 +94,19 @@ void game()
   text("Lives: " + lives, 20, 40); 
 }
 
+float distance(float x1, float y1, float x2, float y2)
+{
+  float xDist = x2 - x1;
+  float yDist = y2 - y1;
+  float dist = sqrt(xDist * xDist + yDist * yDist);
+  return dist;
+}
+
 void mousePressed()
 {
   for (int i = 0 ; i < numBalloons ; i ++)
   {
-    float xDist = mouseX - balloonX[i];
-    float yDist = mouseY - balloonY[i];
-    float dist = sqrt(xDist * xDist + yDist * yDist);
+    float d = distance(mouseX, mouseY, balloonX[i], balloonY[i]);
     if (dist < balloonWidth[i] / 2)
     {
       score ++;
