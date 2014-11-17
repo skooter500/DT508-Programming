@@ -3,6 +3,7 @@ DT508 Programming
 
 Resources
 ---------
+* [Christmas Assignment]()
 * [Processing](http://processing.org)
 * [The Processing language reference](http://processing.org/reference/)
 * [Learning Processing: A Beginner's Guide to Programming Images, Animation, and Interaction (Morgan Kaufmann Series in Computer Graphics)](http://http://www.learningprocessing.com/)
@@ -12,6 +13,20 @@ Resources
 * [The Imagine Cup](https://www.imaginecup.com/)
 * [How to use git](http://git-scm.com/documentation)
 * [A video tutorial on git/github](https://www.youtube.com/watch?v=p_PGUltnB6w)
+
+Week 9
+------
+
+Week 8
+------
+* [BugZap](https://github.com/skooter500/BugZap)
+
+Week 7
+------
+
+Week 6
+------
+* No class this week
 
 Week 5
 ------
