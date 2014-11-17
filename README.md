@@ -3,7 +3,7 @@ DT508 Programming
 
 Resources
 ---------
-* [Christmas Assignment]()
+* [Christmas Assignment](Course/Assignment.md)
 * [Processing](http://processing.org)
 * [The Processing language reference](http://processing.org/reference/)
 * [Learning Processing: A Beginner's Guide to Programming Images, Animation, and Interaction (Morgan Kaufmann Series in Computer Graphics)](http://http://www.learningprocessing.com/)
