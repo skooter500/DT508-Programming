@@ -37,8 +37,8 @@ void setup()
   playerX[0] = 50;
   playerX[1] = width - (50 + playerWidth);
   
-  playerY[0] = (height / 2) - (ballWidth / 2);
-  playerY[1] = (height / 2) - (ballWidth / 2);
+  playerY[0] = (height / 2) - (playerHeight / 2);
+  playerY[1] = (height / 2) - (playerHeight / 2);
   
   ballX = (width / 2) - (ballWidth / 2);
   ballY = (height / 2) - (ballWidth / 2);
