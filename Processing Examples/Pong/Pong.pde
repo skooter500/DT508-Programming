@@ -148,11 +148,11 @@ void updateBall()
 
   float maxY = 5;  
   // Check for left player hit
-  if ((ballX < playerX[0] + playerWidth) && (ballX > playerX[0] - 10) && (ballY > playerY[0]) && (ballY + ballSize < playerY[0] + playerHeight))
+  if ((ballX < playerX[0] + playerWidth) && (ballX > playerX[0] - 10) && (ballY + ballSize > playerY[0]) && (ballY < playerY[0] + playerHeight))
   {
     ballX = playerX[0] + playerWidth;
     ballSpeedX = - ballSpeedX;
-    ballSpeedX += random(1, 3);
+    ballSpeedX += 0.5f;
     float halfPlayer = playerHeight / 2;
     float ballCent = ballY + ballSize / 2;
     float playerCent = playerY[0] + halfPlayer;
@@ -163,11 +163,11 @@ void updateBall()
   }
   
   // Check for player right hit
-  if ((ballX + ballSize > playerX[1]) && (ballX + ballSize < playerX[1] + 10) && (ballY > playerY[1]) && (ballY + ballSize < playerY[1] + playerHeight))
+  if ((ballX + ballSize > playerX[1]) && (ballX + ballSize < playerX[1] + 10) && (ballY + ballSize > playerY[1]) && (ballY < playerY[1] + playerHeight))
   {
     ballX = playerX[1] - ballSize;
     ballSpeedX = - ballSpeedX;
-    ballSpeedX -= random(1, 3);
+    ballSpeedX -= 0.5f;
     
     float halfPlayer = playerHeight / 2;
     
@@ -241,11 +241,11 @@ void splash()
   {
     if (score[0] == maxScore)
     {
-      printText("Player 1 Wins!", font_size.medium, CENTRED, 400);  
+      printText("Player 1 Wins!", font_size.medium, CENTRED, 450);  
     }
     if (score[1] == maxScore)
     {
-      printText("Player 2 Wins!", font_size.medium, CENTRED, 400);  
+      printText("Player 2 Wins!", font_size.medium, CENTRED, 450);  
     }
   }
   stroke(255);
