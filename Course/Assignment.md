@@ -30,7 +30,7 @@ Rubrick:
 | ------|-------------|
 | First | Animation, loops, arrays and methods used extensively and correctly. Everything parameterised. Use of audio and fonts. Some simple interactivity such as a game. Use of keyboard, mouse or controller input. Music and fonts. Use of some advanced features of Processing we havent covered in class such as classes and libraries. 200+ lines of code|
 | 2.1 | Lots of animation, loops and arrays. Methods. Also using audio and fonts. Little or no interactivity. Between 100 and 200 lines of code |
-| 2.2 | No animation or simple back and forth type animation, use of loops, but no arrays. Some duplicated code that could be replaced by an array. Some methods, but no parameters instead using global variables (or no methods). Around 100 lines of code|
+| 2.2 | No animation or simple back and forth type animation, use of loops, but no arrays. Some duplicated code that could be replaced by an array or a loop. Some methods, but no parameters instead using global variables (or no methods). Around 100 lines of code|
 | Pass | No animation. No loops or arrays, just some simple drawing in the draw method, or some attempt at loops that doesnt work. 20-50 lines of code |
 | Fail | Project won't compile or major issues. |
 
