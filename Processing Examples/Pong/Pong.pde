@@ -1,7 +1,5 @@
 import de.ilu.movingletters.*;
 
-MovingLetters letters;
-
 float[] playerX = new float[2];
 float[] playerY = new float[2];
 int[] score = new int[2];
@@ -12,28 +10,10 @@ float ballX, ballY;
 float ballSpeedX, ballSpeedY;
 
 int gameState = 0;
+int CENTRED = -1;
 
-void drawPlayers()
+void reset()
 {
-  for(int i = 0 ; i < playerX.length ; i ++)
-  {
-    rect(playerX[i], playerY[i], playerWidth, playerHeight);
-  }
-}
-
-void drawBall()
-{
-  rect(ballX, ballY, ballWidth, ballWidth);
-}
-
-void setup()
-{
-  size(500, 500);
-  letters = new MovingLetters(this, 20, 1, 0); 
-  
-  playerHeight = 100;
-  playerWidth = 20;
-  ballWidth = 20;
   playerX[0] = 50;
   playerX[1] = width - (50 + playerWidth);
   
@@ -45,6 +25,37 @@ void setup()
   
   ballSpeedX = random(-10, 10);
   ballSpeedY = random(-10, 10);
+}
+
+void drawPlayers()
+{
+  for(int i = 0 ; i < playerX.length ; i ++)
+  {
+    rect(playerX[i], playerY[i], playerWidth, playerHeight);
+  }
+}
+
+MovingLetters[] letters = new MovingLetters[3];
+
+void drawBall()
+{
+  rect(ballX, ballY, ballWidth, ballWidth);
+}
+
+void setup()
+{
+  size(800, 600);
+  
+  for (font_size size:font_size.values())
+  {
+    letters[size.index] = new MovingLetters(this, size.size, 1, 0);
+  }
+  
+  playerHeight = 100;
+  playerWidth = 20;
+  ballWidth = 20;  
+  
+  reset();
 }
 
 void draw()
@@ -61,21 +72,43 @@ void draw()
   }
 }
 
+void updatePlayers()
+{
+}
+
+void updateBall()
+{
+}
+
 void game()
 {
   drawPlayers();
   drawBall();
 }
 
+void printText(String text, font_size size, int x, int y)
+{
+  if (x == CENTRED)
+  {
+    x = (width / 2) - (int) (size.size * (float) text.length() / 2.5f);
+  }
+  letters[size.index].text(text, x, y);  
+}
+
 void splash()
 {
-  letters.text("Pong", 100, 100);
-  if (frameCount / 30 % 2 == 0)
-  {  
-    letters.text("Pres SPACE to play", 100, 200);
+  background(0);
+  stroke(255);
+  
+  printText("Pong", font_size.large, CENTRED, 100);  
+  printText("Programmed by Bryan Duggan", font_size.small, CENTRED, 200);
+  if (frameCount / 60 % 2 == 0)
+  {
+    printText("Press SPACE to play", font_size.large, CENTRED, height - 100);  
   }
   if (keyPressed && key == ' ')
   {
+    reset();
     gameState = 1;
   }
 }
