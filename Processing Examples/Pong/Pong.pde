@@ -4,7 +4,7 @@ import de.ilu.movingletters.*;
 float[] playerX = new float[2];
 float[] playerY = new float[2];
 int[] score = new int[2];
-AudioPlayer[] sounds = new AudioPlayer[3];
+AudioPlayer[] sounds = new AudioPlayer[4];
 float playerHeight;
 float playerWidth;
 float playerSpeed = 5;
@@ -73,6 +73,7 @@ void setup()
   sounds[0] = minim.loadFile("blip0.wav");
   sounds[1] = minim.loadFile("blip1.wav");
   sounds[2] = minim.loadFile("blip2.wav");
+  sounds[3] = minim.loadFile("blip3.wav");
   reset();
 }
 
@@ -136,14 +137,16 @@ void updateBall()
   {
     ballY = 0;
     ballSpeedY = - ballSpeedY;    
+    sounds[2].rewind();
+    sounds[2].play();   
   } 
   
   if (ballY + ballSize > height)
   {
     ballSpeedY = - ballSpeedY;
     ballY = height - ballSize; 
-    sounds[1].rewind();
-    sounds[1].play();   
+    sounds[2].rewind();
+    sounds[2].play();   
   } 
 
   float maxY = 5;  
@@ -152,11 +155,11 @@ void updateBall()
   {
     ballX = playerX[0] + playerWidth;
     ballSpeedX = - ballSpeedX;
-    ballSpeedX += 0.5f;
+    ballSpeedX += 1.5f;
     float halfPlayer = playerHeight / 2;
     float ballCent = ballY + ballSize / 2;
     float playerCent = playerY[0] + halfPlayer;
-    float ballOffset = playerCent - ballCent;
+    float ballOffset = ballCent - playerCent;
     ballSpeedY = (ballOffset / halfPlayer) * maxY;    
     sounds[0].rewind();
     sounds[0].play();    
@@ -167,17 +170,16 @@ void updateBall()
   {
     ballX = playerX[1] - ballSize;
     ballSpeedX = - ballSpeedX;
-    ballSpeedX -= 0.5f;
+    ballSpeedX -= 1.5f;
     
     float halfPlayer = playerHeight / 2;
     
     float ballCent = ballY + ballSize / 2;
     float playerCent = playerY[1] + halfPlayer;
-    float ballOffset = playerCent - ballCent;
+    float ballOffset = ballCent - playerCent;
     ballSpeedY = (ballOffset / halfPlayer) * maxY;
     sounds[1].rewind();
-    sounds[1].play();
-    
+    sounds[1].play();    
   }  
   
   // Check for scores
@@ -185,12 +187,16 @@ void updateBall()
   {
      reset();
      score[1] ++;
+     sounds[3].rewind();
+     sounds[3].play();    
   }  
   
   if (ballX + ballSize > width)
   {
      reset();
      score[0] ++;
+     sounds[3].rewind();
+     sounds[3].play();    
   }  
 }
 
@@ -206,6 +212,8 @@ void game()
     if (checkKey('s'))
     {
       paused = ! paused;
+      sounds[2].rewind();
+      sounds[2].play();   
     }
   }
   drawPlayers();
@@ -256,6 +264,8 @@ void splash()
     gameState = 1;
     score[0] = 0;
     score[1] = 0;
+    sounds[3].rewind();
+     sounds[3].play();    
   }
 }
 
