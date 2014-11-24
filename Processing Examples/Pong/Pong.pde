@@ -219,6 +219,7 @@ void game()
   drawPlayers();
   drawBall();
   printText("Player 1: " + score[0] + " Player 2: " + score[1], font_size.small, 10, 10);
+  line(width / 2, 100, width / 2, height - 100);
   if (score[0] == maxScore || score[1] == maxScore)
   {
     gameState = 0;
