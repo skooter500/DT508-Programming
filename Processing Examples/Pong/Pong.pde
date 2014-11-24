@@ -272,11 +272,7 @@ void splash()
 
 boolean checkKey(int k)
 {
-  if (keys.length >= k) 
-  {
-    return keys[k] || keys[Character.toUpperCase(k)];  
-  }
-  return false;
+  return keys[k];
 }
 
 void mousePressed()
