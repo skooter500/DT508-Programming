@@ -13,10 +13,12 @@ float ballX, ballY;
 float ballSpeedX, ballSpeedY;
 
 int gameState = 0;
+boolean singlePlayer = true;
 boolean paused = true;
 int CENTRED = -1;
 
 int maxScore = 10;
+float ballMax = 10;
 boolean[] keys = new boolean[526];
 
 Minim minim;
@@ -33,9 +35,9 @@ void reset()
   ballY = (height / 2) - (ballSize / 2);
   
   ballSpeedX = random(3, 5);
-  if (random(0, 1) > 0.5f)
+  if (random(0, 1) < 0.5f)
   {
-    ballSpeedX = - ballSpeedX;
+    ballSpeedX = ballSpeedX;
   }
   ballSpeedY = random(-5, 5);
   paused = true;
@@ -93,14 +95,14 @@ void draw()
 
 void updatePlayers()
 {
-  if (checkKey('q'))
+  if (checkKey('Q'))
   {
     if (playerY[0] > 0)
     {
       playerY[0] -= playerSpeed;
     }    
   }
-  if (checkKey('a'))
+  if (checkKey('A'))
   {
     if (playerY[0] + playerHeight < height)
     {
@@ -108,19 +110,30 @@ void updatePlayers()
     }    
   }
   
-  if (checkKey('p'))
-  {
-    if (playerY[1] > 0)
+  if (! singlePlayer)
+  {  
+    if (checkKey('P'))
     {
-      playerY[1] -= playerSpeed;
-    }    
+      if (playerY[1] > 0)
+      {
+        playerY[1] -= playerSpeed;
+      }    
+    }
+    if (checkKey('L'))
+    {
+      if (playerY[1] + playerHeight < height)
+      {
+        playerY[1] += playerSpeed;
+      }    
+    }
   }
-  if (checkKey('l'))
+  else
   {
-    if (playerY[1] + playerHeight < height)
-    {
-      playerY[1] += playerSpeed;
-    }    
+    float halfPlayer = playerHeight / 2;
+    float ballCent = ballY + ballSize / 2;
+    float playerCent = playerY[1] + halfPlayer;
+    
+    playerY[1] += (ballCent - playerCent) * 0.5f;
   }  
 }
 
@@ -151,11 +164,16 @@ void updateBall()
 
   float maxY = 5;  
   // Check for left player hit
-  if ((ballX < playerX[0] + playerWidth) && (ballX > playerX[0] - 10) && (ballY + ballSize > playerY[0]) && (ballY < playerY[0] + playerHeight))
+  if ((ballX < playerX[0] + playerWidth) && (ballY + ballSize > playerY[0]) && (ballY < playerY[0] + playerHeight))
   {
     ballX = playerX[0] + playerWidth;
     ballSpeedX = - ballSpeedX;
-    ballSpeedX += 1.5f;
+    ballSpeedX += 1f;    
+    if (ballSpeedX > ballMax)
+    {
+      ballSpeedX = ballMax;
+    }
+    
     float halfPlayer = playerHeight / 2;
     float ballCent = ballY + ballSize / 2;
     float playerCent = playerY[0] + halfPlayer;
@@ -166,11 +184,15 @@ void updateBall()
   }
   
   // Check for player right hit
-  if ((ballX + ballSize > playerX[1]) && (ballX + ballSize < playerX[1] + 10) && (ballY + ballSize > playerY[1]) && (ballY < playerY[1] + playerHeight))
+  if ((ballX + ballSize > playerX[1]) && (ballY + ballSize > playerY[1]) && (ballY < playerY[1] + playerHeight))
   {
     ballX = playerX[1] - ballSize;
     ballSpeedX = - ballSpeedX;
-    ballSpeedX -= 1.5f;
+    ballSpeedX -= 1f;
+    if (ballSpeedX < - ballMax)
+    {
+      ballSpeedX = - ballMax;
+    }
     
     float halfPlayer = playerHeight / 2;
     
@@ -209,7 +231,7 @@ void game()
   }
   else
   {
-    if (checkKey('s'))
+    if (checkKey('S'))
     {
       paused = ! paused;
       sounds[2].rewind();
