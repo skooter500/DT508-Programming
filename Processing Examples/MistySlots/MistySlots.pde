@@ -24,7 +24,7 @@ int gameMode = 0;
 int toAdd;
 
 boolean sketchFullScreen() {
-  return false;
+  return true;
 }
 
 void spinSlots()
@@ -62,7 +62,7 @@ void playAudio(AudioPlayer player)
 
 void setup()
 {
-  size(1000, 800);
+  size(displayWidth, displayHeight);
   minim = new Minim(this);
   
   for (font_size size:font_size.values())

@@ -1,3 +1,31 @@
+Results
+=======
+
+|Student|Assignment 1|Assignment 2
+|-------|-------------|-----------|
+|C10328241|70|
+|D14124120|54|
+|D14124694|65|
+|C13405242|77|
+|D11123772|93|
+|C13474408|62|
+|C12493162|46|
+|D14124695|53|
+|C11538963|58|
+|D14124121|71|
+|C06579752|53|
+|D14124701|50|
+|D14124023|47|
+
+Assignment 2
+============
+
+Create a version of this classic game Simon in Processing. This is due on 26 January
+
+[![Video](http://img.youtube.com/vi/wwcJbQZGNDs/0.jpg)](http://www.youtube.com/watch?v=wwcJbQZGNDs)
+
+You can go with a square board divided into 4 coloured segments, but the more coll stuff you include, the higher your mark will be. Rubrick to follow. YOu might like to use an ArrayList in your solution. These are like arrays, but have a different syntax for accessing elements and also you can add and remove elements from an arraylist, unlike an array.
+
 Assignment 1
 ============
 Create an animated Christmas card in Processing. You must make the Christmas for someone and give it to that person. 

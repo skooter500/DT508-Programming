@@ -7,13 +7,13 @@ int[] score = new int[2];
 AudioPlayer[] sounds = new AudioPlayer[4];
 float playerHeight;
 float playerWidth;
-float playerSpeed = 5;
+float playerSpeed = 10;
 float ballSize;
 float ballX, ballY;
 float ballSpeedX, ballSpeedY;
 
 int gameState = 0;
-boolean singlePlayer = true;
+boolean singlePlayer = false;
 boolean paused = true;
 int CENTRED = -1;
 
@@ -162,7 +162,7 @@ void updateBall()
     sounds[2].play();   
   } 
 
-  float maxY = 5;  
+  float maxY = 10;  
   // Check for left player hit
   if ((ballX < playerX[0] + playerWidth) && (ballY + ballSize > playerY[0]) && (ballY < playerY[0] + playerHeight))
   {
