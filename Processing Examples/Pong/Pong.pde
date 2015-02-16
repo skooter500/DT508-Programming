@@ -37,7 +37,7 @@ void reset()
   ballSpeedX = random(3, 5);
   if (random(0, 1) < 0.5f)
   {
-    ballSpeedX = ballSpeedX;
+    ballSpeedX = - ballSpeedX;
   }
   ballSpeedY = random(-5, 5);
   paused = true;
@@ -174,11 +174,11 @@ void updateBall()
       ballSpeedX = ballMax;
     }
     
-    float halfPlayer = playerHeight / 2;
-    float ballCent = ballY + ballSize / 2;
-    float playerCent = playerY[0] + halfPlayer;
-    float ballOffset = ballCent - playerCent;
-    ballSpeedY = (ballOffset / halfPlayer) * maxY;    
+    float halfPlayer = playerHeight / 2; // Half the height of the player
+    float ballCent = ballY + ballSize / 2; // The middle of the ball on the Y axis
+    float playerCent = playerY[0] + halfPlayer; // The middle of the player
+    float ballOffset = ballCent - playerCent; // The difference between the middle of the ball and the middle of the player
+    ballSpeedY = (ballOffset / halfPlayer) * maxY; // What proportion of the bat Y is the ball Y and scale it by the maxY   
     sounds[0].rewind();
     sounds[0].play();    
   }
