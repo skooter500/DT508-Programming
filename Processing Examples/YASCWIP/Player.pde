@@ -4,7 +4,7 @@ class Player
    // These variables are called fields of the Player class
    float w;
    PVector pos;
-   PVector velocity;
+   PVector forward;
    float rot;
   
   // This method is called a constructor.
@@ -22,44 +22,48 @@ class Player
   {
     this.w = w;
     pos = new PVector(x, y);
-    velocity = new PVector();
+    forward = new PVector();
     rot = 0;
   }
+
 
 
   // These are methods on the class
   void display()
   {
+    pushMatrix();
     stroke(255);
     float halfW = w * 0.5f;
+    translate(pos.x, pos.y);
     rotate(rot);
-    line(pos.x, pos.y, pos.x - halfW, pos.y + halfW);
-    line(pos.x - halfW, pos.y + halfW, pos.x, pos.y - halfW);
-    line(pos.x, pos.y - halfW, pos.x + halfW, pos.y + halfW);
-    line(pos.x + halfW, pos.y + halfW, pos.x, pos.y);
+    
+    line(0, 0,  - halfW, halfW);
+    line(0 - halfW, halfW, 0, - halfW);
+    line(0, - halfW, 0 + halfW, halfW);
+    line(0 + halfW, halfW, 0, 0);
+    popMatrix();
   }
   
   void move()
   {
+    forward.x = sin(rot);
+    forward.y = - cos(rot);
     if (keyPressed)
     {
       if (keyCode == UP)
       {
-        velocity.y = -1;
-        velocity.x = 0;
+        pos.add(forward);
       }
       if (keyCode == LEFT)
       {
-        rot -= 0.1f
+        rot -= 0.1f;
       }
       if (keyCode == RIGHT)
       {
-        rot += 0.1f
+        rot += 0.1f;
       }
       
     }
-    pos.add(velocity);
-    velocity.x = 0;
-    velocity.y = 0;
+    
   }
 }
