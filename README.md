@@ -14,6 +14,15 @@ Resources
 * [How to use git](http://git-scm.com/documentation)
 * [A video tutorial on git/github](https://www.youtube.com/watch?v=p_PGUltnB6w)
 
+# Semester 2
+
+## Week 5
+- [YASC WIP (With classes and an array list)](Processing Examples/YASCWIP)
+- [Classes in processsing](https://processing.org/reference/class.html)
+- [ArrayList in processing](https://processing.org/reference/ArrayList.html)
+
+## Semester 1
+
 Week 9
 ------
 
