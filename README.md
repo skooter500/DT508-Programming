@@ -16,6 +16,12 @@ Resources
 
 # Semester 2
 
+## Week 7
+- Assignment
+
+## Week 6
+- Lab Test
+
 ## Week 5
 - [YASC WIP (With classes and an array list)](Processing Examples/YASCWIP)
 - [Classes in processsing](https://processing.org/reference/class.html)
